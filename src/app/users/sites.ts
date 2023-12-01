@@ -142,7 +142,7 @@ const bikeIl: Site = new Site('bikeil', {
   getIntroTextImplementation: () => {
     return `ברוכים הבאים לאפליקציית השינועים של חמל אופנועים.
 
-האפליקציה מיועדת לשימוש מתנדבים הרוכבים על דו-גלגלי או רכב פרטי\\מסחרי ורוצים לסייע בשינוע של ציוד ללוחמים ולמשפחות הנפגעים, או בשינועים המוגדרים כדחופים, לפי שיקול דעתו של החמל. 
+האפליקציה מיועדת לשימוש מתנדבים הרוכבים על דו-גלגלי או רכב פרטי\\מסחרי ורוצים לסייע בשינוע של ציוד ללוחמים ולמשפחות הנפגעים, או בשינועים המוגדרים כדחופים, לפי שיקול דעתו של החמל.
 
 בכל בקשה בנושא אחר יש לפנות לאחד מהחמלים האחרים העוסקים במגוון נושאים כגון טרמפים, מלאי ציוד וכו.
 
@@ -266,23 +266,23 @@ function yedidimEnv(urlPrefix: string) {
     canSeeUrgency: () => remult.isAllowed(Roles.admin),
     getIntroTextImplementation: ({ registerVolunteerLink }) => {
       return `ברוכים הבאים למערכת השינועים של ידידים!
-  
+
   כאן תוכלו להתעדכן באירועי שינוע ולסייע בהסעת חיילים לבסיסים, בשינוע ציוד לחיילים או בשינועים שונים הנדרשים לכוחות העורף.
-  
+
   המענה שלכם יסייע באופן משמעותי למאמץ המלחמתי כעוגן האזרחי של ישראל.
-  
+
   ${
     registerVolunteerLink
       ? `
-  
+
   עוד לא נרשמתם? [לחצו כאן להרשמה ונאשר אתכם במהרה](${registerVolunteerLink})
-  
+
   `
       : ''
   }
-  
+
   במידה ונתקלתם בבעיה בהתחברות למערכת יש לפנות למנהל הסניף, או להתקשר למוקד הכוננים במספר [077-600-1230](tel:077-600-1230) שלוחה 1.
-  
+
   צאו לעשות חסדים!`
     },
 
@@ -425,7 +425,7 @@ export const backendSites = [
     syncWithShadag: true,
   }),
   new Site('test1', {
-    getOtherVisibleOrgs: () => [hahatul],
+    // getOtherVisibleOrgs: () => [hahatul],
     showContactToAnyDriver: true,
     showComfortIntakeMessage: true,
     showValidUntil: true,
@@ -484,23 +484,23 @@ export function getSiteFromPath(req: { path: string }) {
 
 /*
 insert into shinuim.users
-( id, org, name, phone, adminNotes, createDate, createUserId, admin, dispatcher, trainee, manageDrivers, deleted, lastUpdateView, addressApiResult, address, okCategories)  
-select id, org, name, phone, adminNotes, createDate, createUserId, admin, dispatcher, trainee, manageDrivers, deleted, lastUpdateView, addressApiResult, address, okCategories 
+( id, org, name, phone, adminNotes, createDate, createUserId, admin, dispatcher, trainee, manageDrivers, deleted, lastUpdateView, addressApiResult, address, okCategories)
+select id, org, name, phone, adminNotes, createDate, createUserId, admin, dispatcher, trainee, manageDrivers, deleted, lastUpdateView, addressApiResult, address, okCategories
 from bikeil.users;
 
 insert into shinuim.tasks (id, org, title, taskStatus, statusChangeDate, description, urgency, category, eventDate, startTime, relevantHours, validUntil, addressApiResult, address, toAddressApiResult, toAddress, distance, requesterPhone1, requesterPhone1Description, phone1, phone1Description, phone2, phone2Description, toPhone1, tpPhone1Description, toPhone2, tpPhone2Description, privateDriverNotes, createdAt, createUserId, driverId, statusNotes, externalId, internalComments, imageId, returnMondayStatus, publicVisible, responsibleDispatcherId)
 select id, org, title, taskStatus, statusChangeDate, description, urgency, category, eventDate, startTime, relevantHours, validUntil, addressApiResult, address, toAddressApiResult, toAddress, distance, requesterPhone1, requesterPhone1Description, phone1, phone1Description, phone2, phone2Description, toPhone1, tpPhone1Description, toPhone2, tpPhone2Description, privateDriverNotes, createdAt, createUserId, driverId, statusNotes, externalId, internalComments, imageId, returnMondayStatus, publicVisible, responsibleDispatcherId
 from bikeil.tasks;
 
-insert into shinuim.changelog (id, org, relatedId, relatedName, entity, appUrl, apiUrl, changeDate, userId, userName, changes, changedFields) 
+insert into shinuim.changelog (id, org, relatedId, relatedName, entity, appUrl, apiUrl, changeDate, userId, userName, changes, changedFields)
 select id, org, relatedId, relatedName, entity, appUrl, apiUrl, changeDate, userId, userName, changes, changedFields
 from bikeil.changelog;
 
 insert into shinuim.taskstatuschanges (id, org, taskId, what, eventStatus, notes, driverId, createUserId, session, createdAt)
-select id, org, taskId, what, eventStatus, notes, driverId, createUserId, session, createdAt 
+select id, org, taskId, what, eventStatus, notes, driverId, createUserId, session, createdAt
 from bikeil.taskstatuschanges;
 insert into shinuim.images select * from bikeil.images;
-insert into shinuim.session (id,createdat,headers,ip) 
+insert into shinuim.session (id,createdat,headers,ip)
 select id,createdat,headers,ip from bikeil.session;
 
 */

@@ -113,12 +113,12 @@ export async function versionUpdate() {
       `create index if not exists task_status_changes_task_id on ${s.$entityName}(${s.taskId})`
     )
   })
-  await version(15, async () => {
-    const t = await dbNamesOf(Task)
-    await db.execute(
-      `update ${t} set ${t.publicVisible}=true where publicVisible='true'`
-    )
-  })
+  // await version(15, async () => {
+  //   const t = await dbNamesOf(Task)
+  //   await db.execute(
+  //     `update ${t} set ${t.publicVisible}=true where publicVisible='true'`
+  //   )
+  // })
   await version(16, async () => {
     const u = await dbNamesOf(User)
     await db.execute(
