@@ -1,0 +1,17 @@
+﻿name: hagai
+
+services:
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    ports:
+      - "54321:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: hagai
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
