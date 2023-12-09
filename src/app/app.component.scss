@@ -70,7 +70,7 @@ $iconWidth: 56px;
   z-index: 1;
 }
 
-.alert-line-badge>span {
+.alert-line-badge .mat-badge-active {
   left: auto !important;
   top: auto !important;
   margin-right: 4px;
@@ -82,7 +82,7 @@ $iconWidth: 56px;
   right: 10px !important;
 }
 
-.draft-line-badge>span {
+.draft-line-badge .mat-badge-active {
   left: auto !important;
   top: auto !important;
   margin-right: 4px;
