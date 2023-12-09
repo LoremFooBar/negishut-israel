@@ -23,7 +23,7 @@ import { AboutComponent } from './about/about.component'
 import { ShowPublicEventComponent } from './show-public-event/show-public-event.component'
 import { TaskSelfUpdateComponent } from './task-self-update/task-self-update.component'
 
-const defaultRoute = ''
+const defaultRoute = 'נסיעות'
 const routes: Routes = [
   {
     path: defaultRoute,

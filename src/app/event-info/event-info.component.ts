@@ -27,7 +27,6 @@ import { UpdateStatusComponent } from '../update-status/update-status.component'
 import { User, matchesCurrentUserId } from '../users/user'
 import { getImageUrl } from '../events/getImageUrl'
 import { DialogConfig } from '../common-ui-elements/src/angular/DialogConfig'
-import { getSite } from '../users/sites'
 
 @DialogConfig({ maxWidth: '95vw' })
 @Component({
