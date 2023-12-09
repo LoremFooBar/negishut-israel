@@ -72,6 +72,7 @@ import { BlockedPhone } from './blockedPhone'
 import { recordChanges } from '../common/change-log/change-log'
 import { updateShadagBasedOnTask } from '../../server/shadag-work'
 import { updateLev1Monday } from '../../server/monday-lev1j'
+import whatsappApi from '../../server/whatsapp-api'
 
 const onlyDriverRules: FieldOptions<Task, string> = {
   includeInApi: (t) => {
@@ -762,6 +763,7 @@ ${this.getLink()}
     this.statusNotes = ''
     await this.insertStatusChange(assignedChangeType)
     await this.save()
+    await whatsappApi.sendStatusUpdate('עמית', this.taskStatus.caption, '+972545884312')
     return this.getContactInfo()
   }
   async insertStatusChange(what: string, notes?: string) {
@@ -1016,11 +1018,11 @@ ${this.getLink()}
     }
 
     return `שלום ${name}, בהמשך לפנייתך ל"${site?.title}":
-${description} 
+${description}
 
 על מנת שנוכל לעזור ולסייע ואזרחים נוספים בצורה יעילה יותר, נשמח שתעדכן בקישור הבא ${
       replyToText ? 'או בהודעה חוזרת ' : ''
-    }אם הבקשה עדיין רלוונטית או הסתדרת כבר 
+    }אם הבקשה עדיין רלוונטית או הסתדרת כבר
 
 ${url + '/s/' + this.editLink}
 
