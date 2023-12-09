@@ -11,7 +11,7 @@ export async function sendSms(
     console.log('blocked phone', phone)
     return 'blocked phone'
   }
-  if (process.env['disable_sms']) {
+  if (process.env['DISABLE_SMS']) {
     console.log({ phone, message })
     return 'disable sms'
   }

@@ -63,7 +63,7 @@ const entities = [
 ]
 
 const postgres = getPostgresSchemaManager({
-  disableSsl: Boolean(process.env['dev']),
+  disableSsl: Boolean(process.env['DEV']),
   entities,
 })
 
