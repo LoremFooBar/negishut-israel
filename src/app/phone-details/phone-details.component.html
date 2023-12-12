@@ -14,23 +14,12 @@
   </div>
 
   <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px">
-    <span
-      mat-mini-fab
-      style="vertical-align: middle; cursor: pointer"
-      color="primary"
-      (click)="sendWhatsapp()"
-    >
-      <img src="assets/whatsapp.png" />
-    </span>
+    <button mat-icon-button style="vertical-align: middle" (click)="sendWhatsapp()">
+      <img alt="Whatsapp icon" src="assets/whatsapp.png" />
+    </button>
     <a href="tel:{{ args.phone }}">
-      <button mat-mini-fab style="vertical-align: middle" color="primary">
-        <mat-icon>call</mat-icon>
-      </button>
+      <mat-icon>call</mat-icon>
+      {{ displayPhone() }}
     </a>
-    <div>
-      <a href="tel:{{ args.phone }}">
-        {{ displayPhone() }}
-      </a>
-    </div>
   </div>
 </ng-container>

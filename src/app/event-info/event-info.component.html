@@ -64,17 +64,15 @@
   <div *ngIf="e.address" class="space-above">
     <strong>כתובת מוצא</strong>
     <div class="phone-container" style="justify-content: space-between">
-      <span (click)="openSourceWaze()">
-        <img src="assets/waze.png" />
-      </span>
       <div style="flex-grow: 1">
-        <a (click)="openSourceWaze()">
-          <span style="display: block"> {{ e.address }} </span>
-        </a>
+        <button mat-icon-button (click)="openSourceWaze()" aria-label="Open source address in Waze">
+          <img alt="Waze icon" src="assets/waze.png" />
+          {{ e.address }}
+        </button>
       </div>
-      <span (click)="openSourceGoogleMap()">
-        <img src="assets/google_maps_icon.png" />
-      </span>
+      <button mat-icon-button (click)="openSourceGoogleMap()">
+        <img alt="Google Maps icon" src="assets/google_maps_icon.png" aria-label="Open source address in Google Maps"/>
+      </button>
     </div>
 
     <app-phone-details
@@ -133,17 +131,13 @@
   <div *ngIf="e.toAddress" class="space-above">
     <strong>כתובת יעד</strong>
     <div class="phone-container" style="justify-content: space-between">
-      <span (click)="openTargetWaze()">
-        <img src="assets/waze.png" />
-      </span>
-      <div style="flex-grow: 1">
-        <a (click)="openTargetWaze()">
-          <span style="display: block"> {{ e.toAddress }} </span>
-        </a>
-      </div>
-      <span (click)="openTargetGoogleMap()">
-        <img src="assets/google_maps_icon.png" />
-      </span>
+      <button mat-icon-button (click)="openTargetWaze()" aria-label="Open target address in Waze">
+        <img alt="Waze icon" src="assets/waze.png" />
+        {{ e.toAddress }}
+      </button>
+      <button mat-icon-button (click)="openTargetGoogleMap()">
+        <img alt="Google Maps icon" src="assets/google_maps_icon.png" aria-label="Open source address in Google Maps"/>
+      </button>
     </div>
     <app-phone-details
       [args]="{
