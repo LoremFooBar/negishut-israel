@@ -103,9 +103,8 @@ a:hover {
 }
 
 .mat-dialog-container {
-
+  max-width: 800px;
   .mat-dialog-actions {
-
     padding-bottom: 0px !important;
   }
 }
