@@ -136,7 +136,7 @@
                   [distance]="distance(e)"
                   [e]="e"
                 >
-                  <a *ngIf="!isFull(e) && !fromMap">{{ 'לפרטים' }}</a>
+                  <button mat-button mat-stroked-button *ngIf="!isFull(e) && !fromMap">{{ 'לפרטים' }}</button>
                   <strong *ngIf="isFull(e)">
                     {{ e.taskStatus.caption }}
                     <span *ngIf="e.driver">, {{ e.driver.name }}</span>

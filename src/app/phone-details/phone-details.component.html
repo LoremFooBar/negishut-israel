@@ -14,7 +14,7 @@
   </div>
 
   <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px">
-    <button mat-icon-button style="vertical-align: middle" (click)="sendWhatsapp()">
+    <button [title]="'שליחת הודעה בווצאפ אל ' + getTitle()" mat-icon-button style="vertical-align: middle" (click)="sendWhatsapp()">
       <img alt="Whatsapp icon" src="assets/whatsapp.png" />
     </button>
     <a href="tel:{{ args.phone }}">

@@ -106,7 +106,8 @@
       <mat-nav-list role="navigation">
         <a mat-list-item
            matLine
-           [routerLink]="['/נסיעות']"
+           routerLink="/נסיעות"
+           routerLinkActive="active-route"
            (click)="routeClicked()"
            class="alert-line-badge"
         >נסיעות
@@ -115,7 +116,8 @@
         <a mat-list-item
            *ngIf="isDispatcher()"
            matLine
-           [routerLink]="['/בעיות']"
+           routerLink="/בעיות"
+           routerLinkActive="active-route"
            (click)="routeClicked()"
            class="draft-line-badge"
         >
@@ -131,7 +133,8 @@
         <a mat-list-item
            *ngIf="isTrainee()"
            matLine
-           [routerLink]="['/טיוטות']"
+           routerLink="/טיוטות"
+           routerLinkActive="active-route"
            (click)="routeClicked()"
            class="draft-line-badge"
         >
@@ -147,7 +150,8 @@
         <a mat-list-item
            *ngIf="isDispatcher()"
            matLine
-           [routerLink]="['/בבדיקה']"
+           routerLink="/בבדיקה"
+           routerLinkActive="active-route"
            (click)="routeClicked()"
            class="draft-line-badge"
         >
@@ -164,7 +168,8 @@
           mat-list-item
           *ngIf="isDispatcher()"
           matLine
-          [routerLink]="['/עדכונים']"
+          routerLink="/עדכונים"
+          routerLinkActive="active-route"
           (click)="routeClicked()"
           class="alert-line-badge"
         >
@@ -182,6 +187,7 @@
              *ngIf="shouldDisplayRoute(m)"
              matLine
              [routerLink]="m.path"
+             routerLinkActive="active-route"
              (click)="routeClicked()"
           >
             {{ routeName(m) }}
@@ -192,7 +198,8 @@
           mat-list-item
           *ngIf="showAddTrip()"
           matLine
-          [routerLink]="['/intake']"
+          routerLink="/intake"
+          routerLinkActive="active-route"
           (click)="routeClicked()"
           class="alert-line-badge"
         >

@@ -16,6 +16,7 @@
   </div>
 </div>
 <mat-dialog-content
+  tabindex="-1"
   class="dialog-container"
   [style.padding-bottom]="'30px'"
   [style.min-width]="'320px'"
@@ -65,13 +66,23 @@
     <strong>כתובת מוצא</strong>
     <div class="phone-container" style="justify-content: space-between">
       <div style="flex-grow: 1">
-        <button mat-icon-button (click)="openSourceWaze()" aria-label="Open source address in Waze">
+        <button
+          title="ניווט אל כתובת המוצא עם ווייז"
+          mat-icon-button
+          (click)="openSourceWaze()"
+          aria-label="Open source address in Waze"
+        >
           <img alt="Waze icon" src="assets/waze.png" />
           {{ e.address }}
         </button>
       </div>
-      <button mat-icon-button (click)="openSourceGoogleMap()">
-        <img alt="Google Maps icon" src="assets/google_maps_icon.png" aria-label="Open source address in Google Maps"/>
+      <button
+        mat-icon-button
+        (click)="openSourceGoogleMap()"
+        aria-label="Open source address in Google Maps"
+        title="ניווט אל כתובת המוצא עם גוגל מפות"
+      >
+        <img alt="Google Maps icon" src="assets/google_maps_icon.png"/>
       </button>
     </div>
 
@@ -131,12 +142,22 @@
   <div *ngIf="e.toAddress" class="space-above">
     <strong>כתובת יעד</strong>
     <div class="phone-container" style="justify-content: space-between">
-      <button mat-icon-button (click)="openTargetWaze()" aria-label="Open target address in Waze">
+      <button
+        mat-icon-button
+        (click)="openTargetWaze()"
+        aria-label="Open target address in Waze"
+        title="ניווט אל כתובת היעד עם ווייז"
+      >
         <img alt="Waze icon" src="assets/waze.png" />
         {{ e.toAddress }}
       </button>
-      <button mat-icon-button (click)="openTargetGoogleMap()">
-        <img alt="Google Maps icon" src="assets/google_maps_icon.png" aria-label="Open source address in Google Maps"/>
+      <button
+        mat-icon-button
+        (click)="openTargetGoogleMap()"
+        aria-label="Open source address in Google Maps"
+        title="ניווט אל כתובת היעד עם גוגל מפות"
+      >
+        <img alt="Google Maps icon" src="assets/google_maps_icon.png" />
       </button>
     </div>
     <app-phone-details

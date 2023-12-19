@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { formatPhone, sendWhatsappToPhone } from '../events/phone'
 import { remult } from 'remult'
 import { getTitle } from '../users/sites'
@@ -8,7 +8,7 @@ import { getTitle } from '../users/sites'
   templateUrl: './phone-details.component.html',
   styleUrls: ['./phone-details.component.scss'],
 })
-export class PhoneDetailsComponent implements OnInit {
+export class PhoneDetailsComponent  {
   constructor() {}
   @Input()
   args!: {
@@ -37,5 +37,5 @@ ${this.args.messageContext ? 'בקשר ל' + this.args.messageContext : ''}
     return this.args.name
   }
 
-  ngOnInit(): void {}
+  getWhatsappTitle() {return `שליחת הודעה בווטסאפ אל ${getTitle()}`}
 }
